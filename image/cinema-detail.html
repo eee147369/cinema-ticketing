@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>影院详情</title>
+    <link rel="stylesheet" href="../css/head.css">
+    <link rel="stylesheet" href="../css/bottom.css">
+    <link rel="stylesheet" href="../css/user-nav.css">
+    <link rel="stylesheet" href="../css/cinema-detail.css">
+    <link rel="stylesheet" href="../css/choose.css">
+    <link rel="stylesheet" href="../css/date-bar.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="head">
+        <div class="nav-menu">
+            <div class="head-img"><img src="电影.png" alt="logo"></div>
+            <a class="nav-item-active" href="cinema.html">首页</a>
+            <a class="nav-item" href="movie.html">电影</a>
+            <a class="nav-item" href="cinema-detail.html">影院</a>
+            <div class="nav-search">
+                <input class="nav-search-input" id="searchInput" placeholder="搜索电影..." autocomplete="off">
+                <div class="nav-search-results" id="searchResults"></div>
+            </div>
+            <div class="nav-item-two">
+                <span class="avatar-inner">
+                    <img src="个人.png" alt="用户" class="avatar-img" id="avatarTrigger">
+                    <span class="avatar-label">登录</span>
+                </span>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a class="dropdown-item" id="profileOption" href="#" data-tab="information">个人信息</a>
+                    <a class="dropdown-item" id="ticketOption" href="#" data-tab="ticket">我的购票</a>
+                    <a class="dropdown-item" href="#" data-tab="favorite">我的收藏</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item logout-item" id="logoutOption" href="#">退出登录</a>
+                </div>
+            </div>
+            <script src="../js/script.js"></script>
+        </div>
+    </div>
+
+    <div style="padding-top:60px;"></div>
+
+    <!-- 影院信息头部 -->
+    <div class="cd-header" id="cdHeader">
+        <div class="cd-header-name"></div>
+        <div class="cd-header-meta"></div>
+    </div>
+
+    <!-- 日期选择 -->
+    <div class="date-bar" id="dateBar"></div>
+
+    <!-- 影厅类型筛选 -->
+    <div class="cd-filter-bar" id="cdFilterBar"></div>
+
+    <!-- 电影排片列表 -->
+    <div class="cd-movie-list" id="cdMovieList"></div>
+
+    <!-- 底部 -->
+    <div class="bottom">
+        <div class="bottom-content">
+            <span>版权所有 &copy; 2026 电影购票管理系统</span>
+            <div class="bottom-links">
+                <a href="#">关于我们</a>
+                <a href="#">隐私政策</a>
+                <a href="#">帮助中心</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/toast.js"></script>
+    <script src="../js/cinema-detail.js"></script>
+</body>
+</html>

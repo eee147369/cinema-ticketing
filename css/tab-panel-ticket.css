@@ -1,0 +1,38 @@
+.tab-panel-ticket.show {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%; /* 修复：不溢出 */
+}
+
+.tab-panel-ticket label {
+    font-weight: bold;
+    color: #333;
+}
+
+.tab-panel-ticket > div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 14px 16px;
+    border-right: 1px solid #ccc;
+    flex: 1 1 200px;
+    min-width: 160px;
+    margin-bottom: 10px;
+}
+
+.tab-panel-ticket > div:last-child {
+    border-right: none;
+}
+
+.ticket-price {
+    margin-top: 10px;
+}
+
+.ticket-status {
+    margin: 10px 0;
+}

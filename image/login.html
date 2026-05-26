@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="../css/head.css">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+    <div class="head">
+        <div class="nav-menu">
+            <div class="head-img"><img src="电影.png" alt="logo"></div>
+            <a class="nav-item" href="cinema.html">首页</a>
+            <a class="nav-item" href="movie.html">电影</a>
+            <a class="nav-item" href="cinema-detail.html">影院</a>
+        </div>
+    </div>
+
+    <div class="login-container">
+        <div class="login-card">
+            <h2>用户登录</h2>
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" id="username" placeholder="请输入用户名" autocomplete="username">
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" placeholder="请输入密码" autocomplete="current-password">
+            </div>
+            <a class="forgot-pwd" href="change-password.html">修改密码</a>
+            <button class="login-btn" id="loginBtn" onclick="doLogin()">登录</button>
+            <div class="error-msg" id="errorMsg"></div>
+            <div style="text-align:center;margin-top:16px;font-size:13px;">
+                <a href="register.html" style="color:var(--cinema-text-dim);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--cinema-gold)'" onmouseout="this.style.color='var(--cinema-text-dim)'">没有账号？去注册</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+/* ===== Favorites Grid - Cinema Noir ===== */
+
+.favorite-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 18px;
+}
+
+.fav-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 18px 18px 18px;
+    border: 1px solid var(--cinema-border);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.02);
+    transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    cursor: default;
+    position: relative;
+    overflow: visible;
+}
+
+.fav-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--cinema-gold);
+    border-radius: 3px 0 0 3px;
+}
+
+.fav-card:hover {
+    border-color: rgba(184, 148, 46, 0.3);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.fav-remove-btn {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--cinema-border);
+    background: rgba(0, 0, 0, 0.08);
+    color: var(--cinema-text-dim);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-family: inherit;
+    opacity: 0;
+    z-index: 2;
+    line-height: 1;
+}
+.fav-card:hover .fav-remove-btn {
+    opacity: 1;
+}
+.fav-remove-btn:hover {
+    border-color: var(--cinema-red-bright);
+    color: var(--cinema-red-bright);
+    background: rgba(214, 48, 49, 0.1);
+}
+
+.fav-icon-genre::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: var(--cinema-gold);
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z'/%3E%3C/svg%3E") center/contain no-repeat;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z'/%3E%3C/svg%3E") center/contain no-repeat;
+    vertical-align: middle;
+    margin-right: 2px;
+}
+.fav-icon-duration::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: var(--cinema-text-dim);
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z'/%3E%3C/svg%3E") center/contain no-repeat;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z'/%3E%3C/svg%3E") center/contain no-repeat;
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
+.fav-poster {
+    width: 72px;
+    height: 96px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: var(--cinema-dark);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cinema-text-muted);
+    font-size: 28px;
+    font-weight: bold;
+    font-family: var(--font-display);
+}
+
+.fav-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.fav-info h4 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: var(--cinema-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
+}
+
+.fav-info .fav-meta {
+    font-size: 13px;
+    color: var(--cinema-text-dim);
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.fav-info .fav-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.fav-time {
+    font-size: 12px;
+    color: var(--cinema-text-dim);
+    margin-top: 8px;
+}

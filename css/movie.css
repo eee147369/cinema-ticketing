@@ -1,0 +1,462 @@
+/* ===== Movie Page - Cinema Noir ===== */
+
+/* Movie tab bar */
+.movie-tab-bar {
+    display: flex;
+    justify-content: center;
+    background: var(--cinema-black);
+    padding: 18px 0;
+    gap: 60px;
+    border-bottom: 1px solid var(--cinema-border);
+}
+
+.movie-tab {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    cursor: pointer;
+    padding: 8px 20px;
+    border: none;
+    background: none;
+    color: var(--cinema-text-dim);
+    transition: color 0.3s;
+    position: relative;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+}
+
+.movie-tab.active {
+    color: var(--cinema-gold);
+}
+
+.movie-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid var(--cinema-gold);
+}
+
+.movie-tab:hover {
+    color: var(--cinema-gold-light);
+}
+
+/* ===== Movie Hero / Carousel ===== */
+.movie-hero {
+    background: linear-gradient(180deg, var(--cinema-dark) 0%, var(--cinema-black) 100%);
+    padding: 30px 0 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.movie-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(180deg, transparent, var(--cinema-black));
+    pointer-events: none;
+}
+
+.movie-carousel-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 480px;
+    perspective: 1000px;
+}
+
+.movie-carousel-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    height: 420px;
+}
+
+.movie-poster-card {
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.movie-poster-card img {
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Center poster */
+.movie-poster-card.center {
+    z-index: 3;
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 12px 48px rgba(192, 57, 43, 0.15), 0 0 0 2px rgba(184, 148, 46, 0.4);
+}
+
+.movie-poster-card.center img {
+    width: 200px;
+    height: 280px;
+}
+
+/* Side posters */
+.movie-poster-card.side {
+    z-index: 1;
+    transform: scale(0.72);
+    opacity: 0.4;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.movie-poster-card.side img {
+    width: 200px;
+    height: 280px;
+}
+
+.movie-poster-card.side:hover {
+    opacity: 0.6;
+}
+
+/* Hidden outermost */
+.movie-poster-card.hidden-card {
+    z-index: 0;
+    transform: scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Carousel buttons */
+.carousel-btn {
+    position: absolute;
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(184, 148, 46, 0.3);
+    background: rgba(0, 0, 0, 0.08);
+    color: var(--cinema-gold);
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    top: 50%;
+    transform: translateY(-50%);
+    backdrop-filter: blur(4px);
+}
+
+.carousel-btn:hover {
+    background: rgba(192, 57, 43, 0.6);
+    border-color: var(--cinema-red-bright);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(192, 57, 43, 0.15);
+}
+
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+/* ===== Movie Info Panel ===== */
+.movie-info-panel {
+    text-align: center;
+    padding: 10px 20px 30px;
+    color: var(--cinema-text);
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.movie-info-panel .info-title {
+    font-size: 28px;
+    font-weight: 700;
+    font-family: var(--font-display);
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    color: var(--cinema-gold-light);
+    text-shadow: 0 2px 12px rgba(184, 148, 46, 0.08);
+}
+
+.movie-info-panel .info-rating {
+    font-size: 20px;
+    color: var(--cinema-gold);
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.movie-info-panel .info-rating span {
+    font-size: 14px;
+    color: var(--cinema-text-dim);
+    font-weight: 400;
+}
+
+.movie-info-panel .info-meta {
+    font-size: 14px;
+    color: var(--cinema-text-muted);
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+}
+
+.movie-info-panel .info-cast {
+    font-size: 14px;
+    color: var(--cinema-text-dim);
+    font-style: italic;
+}
+
+/* ===== Date Bar ===== */
+.date-bar {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    background: var(--cinema-surface);
+    border-bottom: 1px solid var(--cinema-border);
+    padding: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.date-bar::-webkit-scrollbar { display: none; }
+
+.date-tab {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 14px 18px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    position: relative;
+    transition: color 0.3s;
+    color: var(--cinema-text-dim);
+    min-width: 80px;
+}
+
+.date-tab .date-day {
+    font-size: 12px;
+    display: block;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+}
+
+.date-tab .date-num {
+    font-size: 22px;
+    font-weight: 700;
+    display: block;
+    font-family: var(--font-display);
+}
+
+.date-tab.active {
+    color: var(--cinema-gold);
+}
+
+.date-tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 36px;
+    height: 2px;
+    background: var(--cinema-gold);
+    border-radius: 1px;
+    transition: transform 0.3s ease;
+}
+
+.date-tab.active::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.date-tab:hover {
+    color: var(--cinema-gold-light);
+}
+
+/* ===== Showtime Section ===== */
+.showtime-section {
+    background: var(--cinema-black);
+    padding: 20px 16px;
+    min-height: 300px;
+}
+
+.showtime-card {
+    display: flex;
+    align-items: center;
+    background: var(--cinema-surface);
+    border-radius: 10px;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    border: 1px solid var(--cinema-border);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.showtime-card:hover {
+    border-color: rgba(184, 148, 46, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.showtime-time-col {
+    flex: 0 0 100px;
+    text-align: center;
+    padding: 0 12px;
+}
+
+.showtime-start {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--cinema-text);
+    font-family: 'Courier New', monospace;
+}
+
+.showtime-end {
+    font-size: 12px;
+    color: var(--cinema-text-dim);
+    margin-top: 2px;
+}
+
+.showtime-info-col {
+    flex: 1;
+    padding: 0 12px;
+    border-left: 1px solid var(--cinema-border);
+}
+
+.showtime-lang {
+    font-size: 14px;
+    color: var(--cinema-text);
+    font-weight: 500;
+}
+
+.showtime-hall {
+    font-size: 12px;
+    color: var(--cinema-text-dim);
+    margin-top: 3px;
+}
+
+.showtime-price-col {
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 0 12px;
+}
+
+.showtime-price {
+    font-size: 20px;
+    color: var(--cinema-gold);
+    font-weight: 700;
+}
+
+.showtime-price small {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.showtime-btn-col {
+    flex: 0 0 70px;
+    padding-right: 12px;
+}
+
+.showtime-buy-btn {
+    width: 64px;
+    height: 36px;
+    border: 1.5px solid var(--cinema-red-bright);
+    border-radius: 18px;
+    background: transparent;
+    color: var(--cinema-red-bright);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s;
+    font-family: var(--font-body);
+    letter-spacing: 0.5px;
+}
+
+.showtime-buy-btn:hover {
+    background: var(--cinema-red-bright);
+    color: var(--cinema-text);
+    box-shadow: 0 0 16px rgba(214, 48, 49, 0.2);
+}
+
+.showtime-empty {
+    text-align: center;
+    padding: 60px 0;
+    color: var(--cinema-text-dim);
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* ===== Movie Detail Bar (description + favorite) ===== */
+.movie-detail-bar {
+    background: linear-gradient(0deg, var(--cinema-black) 0%, transparent 100%);
+    padding: 0 16px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    margin-top: -20px;
+}
+.movie-detail-bar .movie-desc {
+    background: var(--cinema-surface);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    border: 1px solid var(--cinema-border);
+    font-size: 14px;
+    color: var(--cinema-text-muted);
+    line-height: 1.8;
+    display: none;
+    text-align: left;
+}
+.movie-detail-bar .movie-desc.show {
+    display: block;
+}
+.movie-detail-bar .movie-desc-btn {
+    display: inline-block;
+    margin: 0 8px 16px;
+    padding: 8px 24px;
+    border: 1px solid var(--cinema-border);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--cinema-text-dim);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 13px;
+    transition: all 0.2s;
+}
+.movie-detail-bar .movie-desc-btn:hover {
+    border-color: var(--cinema-gold);
+    color: var(--cinema-gold);
+}
+.movie-detail-bar .movie-fav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 20px;
+    border: 1px solid var(--cinema-border);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--cinema-text-dim);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 13px;
+    transition: all 0.2s;
+    vertical-align: middle;
+}
+.movie-detail-bar .movie-fav-btn:hover {
+    border-color: var(--cinema-gold);
+    color: var(--cinema-gold);
+}
+.movie-detail-bar .movie-fav-btn.active {
+    border-color: var(--cinema-red-bright);
+    color: var(--cinema-red-bright);
+    background: rgba(214,48,49,0.08);
+}

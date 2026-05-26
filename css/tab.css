@@ -1,0 +1,202 @@
+/* ===== 左侧导航 ===== */
+.tabs {
+    top: 420px;
+    left: 100px;
+    width: 120px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 10;
+    position: absolute;
+}
+
+.tabs div {
+    cursor: pointer;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #666;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.2s;
+}
+
+.tabs div:last-child {
+    border-bottom: none;
+}
+
+.tabs div:hover {
+    background: #f5f5f5;
+}
+
+.tabs div.active {
+    color: #333;
+    font-weight: bold;
+    background: #f0fff0;
+    border-left: 3px solid #4caf50;
+}
+
+/* ===== 内容区 ===== */
+.tab-content {
+    position: absolute;
+    top: 430px;
+    left: 260px;
+    right: 40px;
+    min-height: 300px;
+}
+
+.tab-content > div {
+    display: none;
+}
+
+.tab-content > div.show {
+    display: block;
+}
+
+/* ===== 个人信息面板 ===== */
+.tab-panel-information.show {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #fff;
+    padding: 24px;
+    gap: 0;
+}
+
+.tab-panel-information > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.tab-panel-information > div:last-child {
+    border-bottom: none;
+}
+
+.tab-panel-information img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+}
+
+.tab-panel-information label {
+    font-weight: bold;
+    color: #333;
+    min-width: 80px;
+    font-size: 14px;
+}
+
+.tab-panel-information span {
+    color: #333;
+    font-size: 14px;
+}
+
+/* ===== 我的购票面板 ===== */
+.tab-panel-ticket.show {
+    display: block;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.ticket-table thead {
+    background: #f8f8f8;
+}
+
+.ticket-table th {
+    padding: 10px 8px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #e0e0e0;
+    white-space: nowrap;
+}
+
+.ticket-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+}
+
+.ticket-table tbody tr:hover {
+    background: #fafafa;
+}
+
+.ticket-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* 状态标记 */
+.ticket-table td:last-child {
+    font-weight: 500;
+}
+
+.status-paid {
+    color: #4caf50;
+}
+
+.status-refunded {
+    color: #f44336;
+}
+
+/* ===== 修改密码面板 ===== */
+.tab-panel-password {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #fff;
+    padding: 24px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tab-panel-password > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+    min-width: 70px;
+}
+
+.tab-panel-password input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.tab-panel-password input:focus {
+    outline: none;
+    border-color: #4caf50;
+}
+
+.tab-panel-password button {
+    align-self: flex-start;
+    padding: 10px 28px;
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.tab-panel-password button:hover {
+    background: #43a047;
+}

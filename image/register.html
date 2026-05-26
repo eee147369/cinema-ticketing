@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="../css/head.css">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+    <div class="head">
+        <div class="nav-menu">
+            <div class="head-img"><img src="电影.png" alt="logo"></div>
+            <a class="nav-item" href="cinema.html">首页</a>
+            <a class="nav-item" href="movie.html">电影</a>
+            <a class="nav-item" href="cinema-detail.html">影院</a>
+            <div class="nav-item-two">
+                <span class="avatar-inner">
+                    <img src="个人.png" alt="用户" class="avatar-img">
+                    <span class="avatar-label">登录</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-container">
+        <div class="login-card" style="max-width:440px;">
+            <h2>用户注册</h2>
+
+            <div class="form-group">
+                <label>用户名</label>
+                <input type="text" id="username" placeholder="请输入用户名" autocomplete="username">
+            </div>
+            <div class="form-group">
+                <label>密码</label>
+                <input type="password" id="password" placeholder="至少6位密码" autocomplete="new-password">
+            </div>
+            <div class="form-group">
+                <label>确认密码</label>
+                <input type="password" id="confirmPwd" placeholder="再次输入密码" autocomplete="new-password">
+            </div>
+            <div class="form-group">
+                <label>手机号（选填）</label>
+                <input type="tel" id="phone" placeholder="请输入手机号" autocomplete="tel">
+            </div>
+            <div class="form-group">
+                <label>邮箱（选填）</label>
+                <input type="email" id="email" placeholder="请输入邮箱地址" autocomplete="email">
+            </div>
+
+            <button class="login-btn" id="registerBtn" onclick="doRegister()">注册</button>
+            <div class="error-msg" id="errorMsg"></div>
+
+            <a class="back-link" href="login.html" style="display:block;text-align:center;margin-top:16px;">已有账号？去登录</a>
+        </div>
+    </div>
+
+    <script src="../js/toast.js"></script>
+    <script src="../js/register.js"></script>
+</body>
+</html>

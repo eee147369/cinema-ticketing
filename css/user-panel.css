@@ -1,0 +1,183 @@
+/* ===== User Panel - Cinema Noir ===== */
+
+.panel-container {
+    position: relative;
+    width: 78%;
+    max-width: 1100px;
+    margin: -50px auto 40px;
+    min-height: 400px;
+    z-index: 5;
+}
+
+.panel-container > .panel {
+    display: none;
+    border: none;
+    border-radius: 12px;
+    background: var(--cinema-surface);
+    padding: 32px 36px;
+    border: 1px solid var(--cinema-border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.panel-container > .panel.active {
+    display: block;
+    animation: fadeUp 0.3s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== User Info ===== */
+.panel-info {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.panel-info .info-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 16px;
+    border-bottom: 1px solid var(--cinema-border);
+    position: relative;
+    transition: background 0.15s;
+    border-radius: 8px;
+}
+
+.panel-info .info-row:last-child {
+    border-bottom: none;
+}
+
+.panel-info .info-row:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.panel-info .info-row::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 24px;
+    border-radius: 2px;
+    background: var(--cinema-gold);
+}
+
+.panel-info img {
+    width: 22px;
+    height: 22px;
+    opacity: 0.6;
+    margin-left: 8px;
+    filter: brightness(1);
+}
+
+.panel-info label {
+    font-weight: 600;
+    color: var(--cinema-text-muted);
+    min-width: 90px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.panel-info span {
+    color: var(--cinema-text);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* ===== Ticket Table ===== */
+.panel-ticket {
+    padding: 0 !important;
+    overflow: hidden;
+    border-radius: 12px !important;
+}
+
+.ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.ticket-table thead {
+    background: linear-gradient(135deg, var(--cinema-red), #a8382c);
+}
+
+.ticket-table th {
+    padding: 14px 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    font-family: var(--font-display);
+}
+
+.ticket-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--cinema-border);
+    color: var(--cinema-text);
+}
+
+.ticket-table tbody tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.ticket-table tbody tr:hover {
+    background: rgba(184, 148, 46, 0.06);
+}
+
+.status-paid {
+    display: inline-block;
+    padding: 2px 12px;
+    border-radius: 12px;
+    background: rgba(46, 125, 50, 0.1);
+    color: #2d7d46 !important;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.status-refunded {
+    display: inline-block;
+    padding: 2px 12px;
+    border-radius: 12px;
+    background: rgba(198, 40, 40, 0.1);
+    color: #c0392b !important;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+/* ===== Refund Button ===== */
+.refund-btn {
+    padding: 4px 14px;
+    border-radius: 14px;
+    border: 1.5px solid var(--cinema-red-bright);
+    background: transparent;
+    color: var(--cinema-red-bright);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s;
+    font-family: var(--font-body);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.refund-btn:hover {
+    background: var(--cinema-red-bright);
+    color: var(--cinema-text);
+    box-shadow: 0 0 14px rgba(214, 48, 49, 0.2);
+}
+
+.refund-btn:active {
+    transform: scale(0.95);
+}
+
+.refunded-label {
+    color: var(--cinema-text-dim);
+    font-size: 12px;
+    font-style: italic;
+}

@@ -1,0 +1,28 @@
+.bottom {
+    margin-top: 60px;
+    padding: 28px 0;
+    background: var(--cinema-surface);
+    border-top: 1px solid var(--cinema-border);
+}
+
+.bottom-content {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: var(--cinema-text-muted);
+    font-size: 13px;
+}
+
+.bottom-links a {
+    margin-left: 16px;
+    text-decoration: none;
+    color: var(--cinema-text-dim);
+    transition: color 0.2s;
+}
+
+.bottom-links a:hover {
+    color: var(--cinema-gold-light);
+}

@@ -1,0 +1,228 @@
+/* ===== Auth Pages - Cinema Noir ===== */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    min-height: 100vh;
+    background: var(--cinema-black);
+    display: flex;
+    flex-direction: column;
+    background-image: radial-gradient(ellipse at 50% 0%, rgba(184, 148, 46, 0.06) 0%, transparent 60%);
+}
+
+/* ===== Login Page ===== */
+.login-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 40px 40px;
+}
+
+.login-card {
+    background: var(--cinema-surface);
+    border-radius: 12px;
+    padding: 40px 36px 32px;
+    width: 380px;
+    border: 1px solid var(--cinema-border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.login-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 20%; right: 20%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cinema-gold), transparent);
+    opacity: 0.4;
+}
+
+.login-card h2 {
+    text-align: center;
+    font-size: 26px;
+    color: var(--cinema-gold-light);
+    margin-bottom: 32px;
+    letter-spacing: 4px;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+}
+
+.forgot-pwd {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+    color: var(--cinema-text-dim);
+    text-decoration: none;
+    margin-top: -12px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.forgot-pwd:hover {
+    color: var(--cinema-gold-light);
+}
+
+.login-btn {
+    width: 100%;
+    height: 44px;
+    background: linear-gradient(135deg, var(--cinema-red), #a8382c);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+}
+
+.login-btn:hover {
+    box-shadow: 0 4px 20px rgba(192, 57, 43, 0.25);
+    transform: translateY(-1px);
+}
+
+.login-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.error-msg {
+    color: var(--cinema-red-bright);
+    font-size: 14px;
+    text-align: center;
+    margin-top: 12px;
+    min-height: 20px;
+}
+
+/* ===== Change Password Page ===== */
+.change-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 40px 40px;
+}
+
+.change-card {
+    background: var(--cinema-surface);
+    border-radius: 12px;
+    padding: 40px 36px 32px;
+    width: 380px;
+    border: 1px solid var(--cinema-border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.change-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 20%; right: 20%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cinema-gold), transparent);
+    opacity: 0.4;
+}
+
+.change-card h2 {
+    text-align: center;
+    font-size: 26px;
+    color: var(--cinema-gold-light);
+    margin-bottom: 32px;
+    letter-spacing: 4px;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+}
+
+.change-btn {
+    width: 100%;
+    height: 44px;
+    background: linear-gradient(135deg, var(--cinema-gold), #9a7b2a);
+    color: var(--cinema-accent-text);
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+}
+
+.change-btn:hover {
+    box-shadow: 0 4px 20px rgba(184, 148, 46, 0.25);
+    transform: translateY(-1px);
+}
+
+.change-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.msg {
+    color: var(--cinema-red-bright);
+    font-size: 14px;
+    text-align: center;
+    margin-top: 12px;
+    min-height: 20px;
+}
+
+.msg.success {
+    color: var(--cinema-gold);
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--cinema-text-dim);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--cinema-gold-light);
+}
+
+/* ===== Shared Form Styles ===== */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    color: var(--cinema-text-muted);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    height: 44px;
+    border: 1px solid var(--cinema-border);
+    border-radius: 8px;
+    padding: 0 16px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--cinema-text);
+    font-family: var(--font-body);
+}
+
+.form-group input::placeholder {
+    color: var(--cinema-text-dim);
+}
+
+.form-group input:focus {
+    border-color: var(--cinema-gold);
+    box-shadow: 0 0 0 3px rgba(184, 148, 46, 0.15);
+}

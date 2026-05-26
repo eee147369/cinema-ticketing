@@ -1,0 +1,43 @@
+/* ===== Hero Banner - Cinema Noir ===== */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    margin-top: 60px;
+}
+
+.hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.8) brightness(0.85);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(250, 248, 245, 0.85) 0%, rgba(240, 237, 230, 0.75) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-overlay h1 {
+    color: var(--cinema-gold-light);
+    font-size: 36px;
+    font-family: var(--font-display);
+    letter-spacing: 6px;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    text-transform: uppercase;
+}
+
+.hero-overlay p {
+    color: var(--cinema-text-muted);
+    font-size: 15px;
+    margin-top: 10px;
+    letter-spacing: 3px;
+    font-style: italic;
+}

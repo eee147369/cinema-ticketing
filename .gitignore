@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+cinema.db
+*.db
+.env
+config.py
+.vs/
+.vscode/
+*.code-workspace
+.claude/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影票购票系统 - 首页</title>
+    <link rel="stylesheet" href="../css/head.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/bottom.css">
+</head>
+<body>
+    <!-- ===== 导航栏 ===== -->
+    <div class="head">
+        <div class="nav-menu">
+            <div class="head-img"><img src="电影.png" alt="logo"></div>
+            <a class="nav-item-active" href="cinema.html">首页</a>
+            <a class="nav-item" href="movie.html">电影</a>
+            <a class="nav-item" href="cinema-detail.html">影院</a>
+            <div class="nav-search">
+                <input class="nav-search-input" id="searchInput" placeholder="搜索电影..." autocomplete="off">
+                <div class="nav-search-results" id="searchResults"></div>
+            </div>
+            <div class="nav-item-two">
+                <span class="avatar-inner">
+                    <img src="个人.png" alt="用户" class="avatar-img" id="avatarTrigger">
+                    <span class="avatar-label">登录</span>
+                </span>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a class="dropdown-item" id="profileOption" href="#" data-tab="information">个人信息</a>
+                    <a class="dropdown-item" id="ticketOption" href="#" data-tab="ticket">我的购票</a>
+                    <a class="dropdown-item" href="#" data-tab="favorite">我的收藏</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item logout-item" id="logoutOption" href="#">退出登录</a>
+                </div>
+            </div>
+            <script src="../js/script.js"></script>
+        </div>
+    </div>
+
+    <!-- ===== Hero 轮播 ===== -->
+    <div class="hero-banner" id="heroBanner">
+        <div class="hero-track" id="heroTrack"></div>
+        <button class="hero-btn prev">&#8249;</button>
+        <button class="hero-btn next">&#8250;</button>
+        <div class="hero-dots" id="heroDots"></div>
+    </div>
+
+    <!-- ===== 正在热映 ===== -->
+    <section class="home-section">
+        <div class="home-inner">
+            <div class="home-header">
+                <h2 class="home-title red">正在热映</h2>
+                <a href="movie.html" class="home-more">全部 <span>&#8250;&#8250;</span></a>
+            </div>
+            <div class="home-row">
+                <div class="home-main">
+                    <div class="movie-grid" id="hotMovies"></div>
+                </div>
+                <div class="home-sidebar">
+                    <h3 class="sidebar-title red">今日票房</h3>
+                    <div class="sidebar-box" id="boxOffice"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 为你推荐 ===== -->
+    <section class="home-section home-section-alt">
+        <div class="home-inner">
+            <div class="home-header">
+                <div style="display:flex;align-items:center;gap:8px;">
+                    <h2 class="home-title blue">为你推荐</h2>
+                    <span class="hand-icon">&#9995;</span>
+                </div>
+            </div>
+            <div class="home-row">
+                <div class="home-main">
+                    <div class="movie-grid" id="recMovies"></div>
+                </div>
+                <div class="home-sidebar">
+                    <h3 class="sidebar-title gold">TOP 10</h3>
+                    <div class="sidebar-box" id="top10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 页脚 ===== -->
+    <footer class="home-footer">
+        <div class="home-footer-inner">
+            <div class="home-footer-grid">
+                <div>
+                    <div class="home-footer-brand">
+                        <div class="home-footer-brand-icon"></div>
+                        <span class="home-footer-brand-text">电影票</span>
+                    </div>
+                    <p class="home-footer-desc">专业的在线电影票务平台，为您提供便捷的购票服务和丰富的电影资讯。</p>
+                </div>
+                <div>
+                    <h4 class="home-footer-col-title">快速链接</h4>
+                    <ul class="home-footer-links">
+                        <li><a href="#">首页</a></li>
+                        <li><a href="movie.html">正在热映</a></li>
+                        <li><a href="movie.html">即将上映</a></li>
+                        <li><a href="USER.html">个人中心</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="home-footer-col-title">帮助支持</h4>
+                    <ul class="home-footer-links">
+                        <li><a href="#">购票指南</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">退改签政策</a></li>
+                        <li><a href="#">隐私协议</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="home-footer-col-title">联系我们</h4>
+                    <ul class="home-footer-contact">
+                        <li>&#9742; </li>
+                        <li>&#9993; </li>
+                        <li>&#9873; </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="home-footer-bottom">
+                <p>&copy; 2026 电影票购票系统 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/toast.js"></script>
+    <script src="../js/home.js"></script>
+</body>
+</html>
