@@ -9,6 +9,9 @@ from db import get_db_connection, init_db, using_sqlite
 app = Flask(__name__)
 CORS(app)
 
+# 初始化数据库（模块级调用，兼容 gunicorn）
+init_db()
+
 # 托管前端静态文件，让所有页面可以通过 http://localhost:5000/ 访问
 STATIC_DIR = os.path.dirname(__file__) or '.'
 
